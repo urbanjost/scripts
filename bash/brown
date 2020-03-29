@@ -1,0 +1,5 @@
+#!/bin/bash
+#@(#) brown(1sh) - example of changing xterm(1) using esc(1)
+esc -xrdb|xrdb -merge
+esc -bg brown -fg white -rows 40 -cols 132 -cr red -fn 5
+exit

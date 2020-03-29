@@ -1,0 +1,11 @@
+#!/bin/bash
+# 132(1sh) - try to set terminal or terminal emulator to 132 columns in width
+if inpath.sh esc
+then
+   esc 132
+else
+   # try ANSI VT102 sequence
+   printf '\e[?40h\e[?3h'
+   #printf '\e[?40h\e[?3l'
+fi
+exit

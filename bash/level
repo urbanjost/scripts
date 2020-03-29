@@ -1,0 +1,44 @@
+#!/bin/bash
+################################################################################
+#@(#) level(1sh) - echo shell level using environment variable SHLVL and pstree(1)
+# 20200329
+################################################################################
+HELP(){
+# suitable for use with markdown processor txt2man(1) for making manpage.
+cat <<\EOF
+NAME
+   level(1sh) - echo shell level using environment variable SHLVL and pstree(1)
+SYNOPSIS
+   level
+DESCRIPTION
+   Useful for those who often spawn interactives shells from within
+   other programs such as vim(1), ftp(1), ...
+
+   Sometimes, especially if a window has been setting there for a while
+   it is easy to loose track.
+EXAMPLE
+ Sample usage:
+
+  This shows that level was executed in a bash(1) shell spawned from
+  the vim(1) editor (which was spawned by a bash(1) shell from instead
+  of another script...). I am probably due for a few exit(1) commands.
+
+   level
+   bash>xterm>bash>viw>vim>bash>viw>vim>bash : 9
+EOF
+}
+################################################################################
+(
+if [[ $(which pstree 2>/dev/null) =~ .*/pstree ]]
+then
+   pstree --ascii --compact --show-parents "$$"|head -n 1 |
+     sed \
+        -e 's/[-+][-+][-+]level[-+][-+][-+].*//' \
+        -e 's/.*systemd---//' \
+        -e 's/[-+][-+][-+]/>/g'
+fi
+echo ": $((SHLVL - 1))"
+)|xargs
+################################################################################
+exit
+################################################################################

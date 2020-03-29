@@ -1,0 +1,10 @@
+#!/bin/bash
+# 80(1sh) - try to set terminal or terminal emulator to 80 columns in width
+if inpath.sh esc
+then
+   esc 80
+else
+   # try ANSI VT102 sequence
+   printf '\e[?40h\e[?3l'
+fi
+exit
