@@ -1,0 +1,33 @@
+#!/bin/sh
+###############################################################################
+#@(#) Get definition of a word using DICT Protocol and curl(1)
+###############################################################################
+WORD=$1
+###############################################################################
+case "$1" in
+###############################################################################
+'')
+   # list all the dictionaries using
+   (
+      exec 2>&1
+      echo 'LIST OF DICTIONARIES:'
+      curl dict://dict.org/show:db
+   )|more
+      cat <<\EOF
+   
+   Now in-order to find the actual meaning of Bash in computer we can search
+   for bash in “foldoc” dictionary as follows
+      $0 bash:foldoc
+   
+   For more details with regard to DICT please read RFC2229
+EOF
+;;
+###############################################################################
+*)
+   curl dict://dict.org/d:"$WORD"|more
+;;
+###############################################################################
+esac
+###############################################################################
+exit
+###############################################################################
