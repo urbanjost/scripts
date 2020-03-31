@@ -1,3 +1,63 @@
-#!/bin/sh
-#ident  "@(#)lower.sh  1.0  lower xterm in X11 window stack - John S. Urban"
+#!/bin/bash
+################################################################################
+#@(#)lower.sh  lower(1sh) - lower xterm in X11 window stack
+################################################################################
+HELP(){
+(txt2man -T|| cat ) 2>/dev/null <<\EOF
+NAME
+     lower(1sh) - Lower the current xterm(1) window on the display to the back of the stack
+SYNOPSIS
+     lower
+DESCRIPTION
+     Use escape sequences sent to the terminal to lower the current xterm(1)
+     window to the back of the display stack.
+EXAMPLE
+     lower
+LICENSE
+  LICENSE: Public Domain
+EOF
+}
+################################################################################
+VERSION(){
+cat <<\EOF
+VERSION:  1.0, 20200331
+AUTHOR:   John S. Urban
+LICENSE:  Public Domain
+EOF
+}
+################################################################################
+USAGE(){
+printf "$0 : Usage: %s: [-h|-v] \n" 
+}
+################################################################################
+#
+# parse options
+#
+# Transform long options to short by editing arguments
+for arg in "$@"; do
+  shift
+  case "$arg" in
+    "--help")    set -- "$@" "-h" ;;
+    "--version") set -- "$@" "-v" ;;
+    *)           set -- "$@" "$arg"
+  esac
+done
+OPTERR=1
+while getopts hv PARAM "$@"
+do
+   case "$PARAM" in
+    h)   HELP; exit 0 ;;
+    v)   VERSION; exit 0;;
+    ?)   USAGE; exit 2;;
+   esac
+done
+shift $(($OPTIND - 1))
+[[ "$*" != '' ]] && USAGE && exit 3 
+################################################################################
+#
+# main
+#
 E -lower
+################################################################################
+exit
+################################################################################
