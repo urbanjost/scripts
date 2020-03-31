@@ -1,13 +1,14 @@
 #!/bin/bash
 ################################################################################
-#@(#)lower.sh  lower(1sh) - lower xterm in X11 window stack
+#@(#)lower(1sh) - lower xterm in X11 window stack
 ################################################################################
 HELP(){
 (txt2man -T|| cat ) 2>/dev/null <<\EOF
 NAME
    lower(1sh) - Lower the current xterm(1) window on the display to the back of the stack
+   (LICENSE:PD)
 SYNOPSIS
-   lower
+   lower [--help|--version]
 DESCRIPTION
    Use escape sequences sent to the terminal to lower the current xterm(1)
    window to the back of the display stack.
@@ -22,8 +23,15 @@ DESCRIPTION
       echo 'XTerm*VT100.allowWindowOps: true'|xrdb -merge
 
    before starting your xterm(1) windows.
+OPTIONS
+    --help     display this help and exit
+    --version  output version information and exit
 EXAMPLE
+   Sample usage:
+
      lower
+     # lower window until command completes and then raise it
+     lower;sleep 10;raise
 EOF
 }
 ################################################################################
@@ -36,7 +44,7 @@ EOF
 }
 ################################################################################
 USAGE(){
-printf "$0 : Usage: %s: [-h|-v] \n" 
+printf "$0 : Usage: %s: [-h|-v] \n"
 }
 ################################################################################
 #
@@ -46,11 +54,12 @@ printf "$0 : Usage: %s: [-h|-v] \n"
 for arg in "$@"; do
   shift
   case "$arg" in
-    "--help")    set -- "$@" "-h" ;;
-    "--version") set -- "$@" "-v" ;;
-    *)           set -- "$@" "$arg"
+    '--help'|'-help')       set -- "$@" "-h"   ;;
+    '--version'|'-version') set -- "$@" "-v"   ;;
+    *)                      set -- "$@" "$arg" ;;
   esac
 done
+# parse short options
 OPTERR=1
 while getopts hv PARAM "$@"
 do
@@ -61,7 +70,7 @@ do
    esac
 done
 shift $(($OPTIND - 1))
-[[ "$*" != '' ]] && USAGE && exit 3 
+[[ "$*" != '' ]] && USAGE && exit 3
 ################################################################################
 #
 # main
