@@ -5,16 +5,25 @@
 HELP(){
 (txt2man -T|| cat ) 2>/dev/null <<\EOF
 NAME
-     lower(1sh) - Lower the current xterm(1) window on the display to the back of the stack
+   lower(1sh) - Lower the current xterm(1) window on the display to the back of the stack
 SYNOPSIS
-     lower
+   lower
 DESCRIPTION
-     Use escape sequences sent to the terminal to lower the current xterm(1)
-     window to the back of the display stack.
+   Use escape sequences sent to the terminal to lower the current xterm(1)
+   window to the back of the display stack.
+
+   Depending on your system, you may have to add the following line to your
+   ~/.Xdefaults file
+
+      XTerm*VT100.allowWindowOps:        true
+
+   once or for each new X11 session run
+
+      echo 'XTerm*VT100.allowWindowOps: true'|xrdb -merge
+
+   before starting your xterm(1) windows.
 EXAMPLE
      lower
-LICENSE
-  LICENSE: Public Domain
 EOF
 }
 ################################################################################
