@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+#ident "@(#)small.sh 1.0 change size of current xterm window to "standard size - John S. Urban"
+#
+# change size of current xterm window to "standard size"
+# customize to taste. See E(1) for available options
+# Works on X10 and enhanced X11 xterm windows; does not
+# work on some versions of xterm. Usage:
+#    small [0-6]
+# Optional parameter chooses Nth font from font menu
+# displayed via ctrl-Mouse3. 
+#xrefresh
+SIZE=${1:-0}
+if [ "$*" = '' ]
+then          # 24x80 using current font
+   #E -rows 24 -cols 80 -down 30 -right 30
+   E -rows 24 -cols 80 
+elif [ "$SIZE" -le 6 ]
+then          # assume 1 thru 6 picks XTerm menu fonts
+   #E -f "$SIZE" -rows 24 -cols 80 -down 30 -right 30
+   E -f "$SIZE" -rows 24 -cols 80 
+else          # assume size should be passed to fixed(1)
+   fixed $*
+   #E -rows 24 -cols 80 -down 30 -right 30
+   E -rows 24 -cols 80
+fi
+#xrefresh
+exit
+
