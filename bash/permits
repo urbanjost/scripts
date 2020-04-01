@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #@(#) permits(1sh) - ls(1) a file leaf and all directories above it
 #version 19920421 John S. Urban
 # lets you quickly see permits to a file and the parent directories

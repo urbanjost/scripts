@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #@(#) zero(1sh) - remove zero length and unwanted files 
 #ident  "@(#) zero.sh - remove zero length and unwanted files V 1.0; 20070909; John S. Urban"
 ################################################################################

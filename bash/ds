@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #set -x
 # @(#) ds(1sh) - ls(1) by size 
 #ident  "@(#) 1.2  19960401 John S. Urban"

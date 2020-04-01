@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ################################################################################
 #@(#) manvi(1sh) - view man pages with editor
 #ident  "@(#) John S. Urban, 19910321"

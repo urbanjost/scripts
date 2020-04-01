@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # @(#) viw(1sh) - find command with which(1) and edit it
 # if a tty is attached call the editor on the file, else cat(1) it to stdout
 if tty -s

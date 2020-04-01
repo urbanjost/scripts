@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 #ident "@(#)small.sh 1.0 change size of current xterm window to "standard size - John S. Urban"
 #

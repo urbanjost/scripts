@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #set -x
 #===============================================================================
 #ident  "@(#) 1.0 set/display  xterm fonts using E.sh 19960401 John S. Urban"
