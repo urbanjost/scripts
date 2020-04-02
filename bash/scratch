@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #-------------------------------------------------------------------------------
 # @(#)scratch(1sh) - create good temporary scratch file name and echo name
 # @(#)(John S. Urban)

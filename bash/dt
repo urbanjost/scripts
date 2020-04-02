@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #@(#) dt(1sh) - ls(1) by modification date 
 #ident "@(#) 1.2 19920421 19960401 John S. Urban"
 

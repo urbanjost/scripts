@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #set -x
 ################################################################################
 #ident  "@(#) view info pages with editor. (John S. Urban, 019910321)"

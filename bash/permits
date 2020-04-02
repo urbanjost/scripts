@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 ################################################################################
 #@(#) permits(1sh) - ls(1) a file leaf and all directories above it
 #version 19920421 John S. Urban

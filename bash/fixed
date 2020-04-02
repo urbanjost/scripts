@@ -1,12 +1,18 @@
-#!/bin/bash
+#!/bin/bash --norc
 #set -x
 #===============================================================================
-#ident  "@(#) 1.0 set/display  xterm fonts using E.sh 19960401 John S. Urban"
+#ident  '@(#)set/display  xterm fonts using E.sh'
+#ident  '@(#) 1.0 19960401 John S. Urban'
 #===============================================================================
-if test $# =  0 
+if test $# =  0 -o "$*" = '--help'
 then
-cat <<\EOF
- Usage: fixed fontsize [fontnumber|0|choose]
+(${TXT2MAN:-txt2man -T}|| cat ) 2>/dev/null <<\EOF
+NAME
+    fixed(1sh) - try to find and change to font of specified size in an xterm(1) terminal emulator
+SYNOPSIS
+    fixed fontsize [fontnumber|0|choose]
+DESCRIPTION
+OPTIONS
 
     fontsize:
        select fixed font of point size $1
@@ -19,7 +25,9 @@ cat <<\EOF
     choose
           list and use selected fonts until prompted to stop 
        
- examples:
+EXAMPLES
+ Sample usage:
+
     fixed 20          # choose first font size of 20 points
     fixed 20 3        # choose 3rd  fixed font of point size 20
     fixed 18 0        # just list all 18 point fonts

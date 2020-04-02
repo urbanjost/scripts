@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #ident  "@(#)full.sh  1.0  set xterm to full screen size - John S. Urban"
 ######################################
 [ "$1" != '' ] && fixed $*

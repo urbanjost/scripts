@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 ################################################################################
 # @(#) goo(1sh) - Google Quicksearch
 export STRING=$(echo "$*"|sed -e 's/ /%20/g')

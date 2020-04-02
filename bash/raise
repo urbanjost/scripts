@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/bin/bash --norc
 ################################################################################
 #@(#)raise(1sh) - raise xterm in X11 window stack
 ################################################################################
 HELP(){
-(txt2man -T|| cat ) 2>/dev/null <<\EOF
+set -x
+(${TXT2MAN:-txt2man -T}|| cat ) 2>/dev/null <<\EOF
 NAME
    raise(1sh) - Raise the current xterm(1) window on the display to the back of the stack
    (LICENSE:PD)
@@ -18,7 +19,7 @@ DESCRIPTION
 
       XTerm*VT100.allowWindowOps:        true
 
-   once or for each new X11 session run
+   once before starting your X11 Windows client or for each new X11 session run
 
       echo 'XTerm*VT100.allowWindowOps: true'|xrdb -merge
 

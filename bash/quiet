@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 ###############################################################################
 #@(#) quiet(1sh) - combine stdin and stdout 
 #ident  "@(#) 1.0  John S. Urban"

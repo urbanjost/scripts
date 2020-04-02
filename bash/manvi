@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/bash --norc
 ################################################################################
 #@(#) manvi(1sh) - view man pages with editor
 #ident  "@(#) John S. Urban, 19910321"
 HELP(){
-(txt2man -T|| cat ) 2>/dev/null <<\EOF
+(${TXT2MAN:-txt2man -T}|| cat ) 2>/dev/null <<\EOF
 NAME
       manvi(1) - view a man(1) page in an editor 
 SYNOPSIS

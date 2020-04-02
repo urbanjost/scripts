@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #set -x
 # @(#) fcmd(1sh) - find command pathnames and optionally act on them
 # Version 1.0; Copyright (c) 1991, by John S. Urban

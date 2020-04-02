@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #!/bin/dash
 # dash works in cygwin, bash gets errors on raw reads on cygwin
 ###################################################
@@ -147,7 +147,7 @@ $q If your window manager supports multiple virtual displays (like ctwm(1))   $q
 $q by defining the property WM_OCCUPANCY (use xprop -id \$WINDOWID to see)     $q
 $q${S}  -o panel_number|panel_name|all$R  # move window to specified panel(s)       $q
 $r$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$Q$q
-$q${S} -xrdb  $R       # For E(1) to work with some xterm versions, use this once $q
+$q${S} -xrdb  $R       # For E(1) to work with some xterm versions, use this once   $q
 $q${S}        $R       # after you start your X11 Windows client or add the         $q
 $q${S}        $R       # following X11 Windows resources to ~.Xresources:           $q
 $q   *VT100.allowWindowOps: true                                              $q

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 #@(#) mono(1sh) -set all the pen colors to the current foreground color in an xterm(1) using esc(1)
 
 # terminfo entries for xterm (often found in /usr/share/terminfo/x/) that are monochrome are not

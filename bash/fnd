@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 ################################################################################
 #ident  "@(#) find and edit files in your home directory (1.0 John S. Urban)"
 # $0 -rebuild  # rebuilds index

@@ -1,15 +1,15 @@
-#!/bin/bash
+#!/bin/bash --norc
 ################################################################################
 #@(#) 80(1sh) - set ANSI VT102 terminal or compatible terminal emulator to 80 columns in width
 HELP(){
-(txt2man -T|| cat ) 2>/dev/null <<\EOF
+(${TXT2MAN:-txt2man -T}|| cat ) 2>/dev/null <<\EOF
 NAME
    80(1sh) - set ANSI VT102 terminal or compatible terminal emulator to 80 columns in width
    (LICENSE:PD)
 SYNOPSIS
    80 [--help|--version] [rows]
 DESCRIPTION
-   Use escape sequences sent to the terminal to  set ANSI VT102 terminal
+   Use escape sequences sent to the terminal to set ANSI VT102 terminal
    or compatible terminal emulator to 80 columns in width.
 
 OPTIONS
@@ -36,6 +36,7 @@ EOF
 USAGE(){
 printf "$0 : Usage: %s: [-h|-v] [rows]\n"
 }
+################################################################################
 #
 # parse options
 #

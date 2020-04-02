@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash --norc
 # @(#)banner.sh(1sh) emulate banner command to print large block letters
 # @(#) 1.0 19940301 John S. Urban
 ONECHAR(){
