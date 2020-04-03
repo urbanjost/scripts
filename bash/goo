@@ -10,7 +10,7 @@ then
    xdg-open "$STRINGHTTP"
 else
    set -x
-   browser "$iSTRINGHTTP"
+   browser "$STRINGHTTP"
 fi
 ################################################################################
 exit
