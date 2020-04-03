@@ -59,9 +59,9 @@ ${TEMP:-\
 #-------------------------------------------------------------------------------
 # create temporary file
 # if mktemp(1) exists, use it
-if [ -x "`which mktemp 2>/dev/null`" ]
+if [ -x "$(which mktemp 2>/dev/null)" ]
 then
-   temporary_file="`mktemp $TMPDIR/$USER.$$.XXXXXX 2> /dev/null`"
+   temporary_file="$(mktemp $TMPDIR/$USER.$$.XXXXXX 2> /dev/null)"
 else
    # use the current username and PID and date information to try to get
    # a unique scratch file. Don't use for critical data as someone could
@@ -69,7 +69,7 @@ else
    COUNT=1
    while [ $COUNT -lt 10000 ]
    do
-      temporary_file="$TMPDIR/$USER.$$.`date '+%s'`"
+      temporary_file="$TMPDIR/$USER.$$.$(date '+%s')"
       if [ ! -e "$temporary_file" ]
       then
          touch $temporary_file && chmod o-xrw,g-xrw $temporary_file

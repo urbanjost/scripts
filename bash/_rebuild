@@ -11,3 +11,7 @@ for NAME in $(grep -l 'TXT2MAN:-' *|grep -v _rebuild)
 do
    $NAME --help|txt2man|gzip ->man/man1/$NAME.1.gz
 done
+rm man/man1/*~.1.gz
+rm man/man1/*~.1
+git status
+exit
